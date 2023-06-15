@@ -1,0 +1,393 @@
+/* load */
+/* #circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+	width: 150px;
+    height: 150px;	
+}
+
+.loader {
+    width: calc(100% - 0px);
+	height: calc(100% - 0px);
+	border: 8px solid #12121261;
+	border-top: 8px solid #ffc451;
+	border-radius: 50%;
+	animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate {
+100% {transform: rotate(360deg);}
+}  */
+/* hsaf */
+
+body {
+    margin: 0 0;
+    /* background-color: rgb(225, 225, 225); */
+    font-family: "Nunito", sans-serif;
+}
+
+
+.navbar {
+    background-color: rgba(62, 62, 62, 0.75); /* Đặt màu nền với độ mờ */
+    background-blend-mode: darken; /* Áp dụng hiệu ứng mờ */
+}
+
+.logo-nav-item1 {
+    color: #ccc;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo-nav-item2 {
+    color: #ffc451;
+}
+.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+.dropdown > .dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}
+
+.dropdown-menu li {
+    position: relative;
+}
+.dropdown-menu .dropdown-submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: -7px;
+}
+
+.dropdown-menu > li:hover > .dropdown-submenu {
+    display: block;
+}
+
+.button-get-started {
+    width: 120px;
+    height: 40px;
+    border: 1px solid #ffc451;
+    color: #ffc451;
+}
+
+.button-get-started:hover {
+    background-color: #ffc451;
+    color: #000;
+}
+
+.banner {
+    min-height: 500px;
+    background-color: rgb(51, 51, 51);
+    background-image: url("https://bootstrapmade.com/demo/templates/Gp/assets/img/hero-bg.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    background-blend-mode: darken;
+    margin-top: 78px;
+
+    background-attachment: fixed;
+    
+}
+
+.banner div {
+    animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s;
+}
+
+@keyframes reveal {
+    0% {
+      transform: translate(0,100%);
+    }
+    100% {
+      transform: translate(0,0);
+    }
+  }
+
+.border {
+    border: 1px #ffc451 solid;
+}
+
+.hero-box {
+    transition: all 0.5s;
+}
+
+.hero-box:hover {
+    border: 1px solid #ffc451 !important;
+}
+
+.bi {
+    color: #ffc451;
+}
+
+.item-banner {
+    text-decoration: none;
+    color: #ccc;
+}
+
+.item-banner:hover {
+    text-decoration: none;
+    color: #ffc451;
+}
+
+.custom-list {
+    text-align: left;
+    list-style-type: none;
+}
+
+/* about */
+
+.slick-slide {
+    margin: 0px 20px;
+}
+
+.slick-slide img {
+    width: 75%;
+    height: 100%;
+}
+
+
+.slick-list
+{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+} 
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+} 
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
+
+.slick-slide
+{
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+/* services */
+.title-services h6::after {
+    content: "";
+    display: inline-block;
+    margin: 5px 0 5px 5px;
+    width: 120px;
+    height: 1px;
+    background-color: #ffc451;
+}
+
+.social-box .box {
+    background: #fff;
+    height: 20rem;
+    transition: all 0.5s ease-out;
+}
+
+.social-box .box:hover {
+    box-shadow: 0 0 10px #8e8e8e98;
+    animation: reveal 0.5s cubic-bezier(0.5, 0, 0.175, 1) 0.1s;
+} 
+@keyframes reveal {
+    0% {
+        transform: translate(0, 1.5%);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.icon-card-item {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    background-color: #ffc451;
+}
+
+/* Space Between Service And Portfolio */
+.space-between-serpor {
+    min-height: 220px;
+    background-color: rgba(0, 0, 0, 0.598);
+    background-image: url("https://bootstrapmade.com/demo/templates/Gp/assets/img/cta-bg.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    background-blend-mode: darken;
+    margin-top: 78px;
+
+    background-attachment: fixed;
+}
+
+.button-call-to-action {
+    width: 180px;
+    height: 40px;
+    border: 2px solid white;
+    /* color: #ffc451; */
+}
+
+.button-call-to-action:hover {
+    background-color: #ffc451;
+    color: #000 !important;
+}
+
+/* portfolio */
+
+/* between port and team */
+.space-between-porteam {
+    min-height: 400px;
+    background-color: rgba(0, 0, 0, 0.7);
+    background-image: url("https://bootstrapmade.com/demo/templates/Gp/assets/img/testimonials-bg.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    background-blend-mode: darken;
+    margin-top: 78px;
+
+    background-attachment: fixed;
+}
+
+#fade-quote-carousel.carousel {
+  padding-bottom: 60px;
+}
+#fade-quote-carousel.carousel .carousel-inner .item {
+  opacity: 0;
+  -webkit-transition-property: opacity;
+      -ms-transition-property: opacity;
+          transition-property: opacity;
+}
+#fade-quote-carousel.carousel .carousel-inner .active {
+  opacity: 1;
+  -webkit-transition-property: opacity;
+      -ms-transition-property: opacity;
+          transition-property: opacity;
+}
+#fade-quote-carousel.carousel .carousel-indicators {
+  bottom: 10px;
+}
+#fade-quote-carousel.carousel .carousel-indicators > li {
+  background-color: #e84a64;
+  border: none;
+}
+#fade-quote-carousel blockquote {
+    text-align: center;
+    border: none;
+}
+#fade-quote-carousel .profile-circle {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 100px;
+}
+
+/* team */
+
+/* contact us */
+.icon-contact-us {
+    width: 50px;
+    height: 50px;
+    background-color: #ffc451;
+    border-radius: 5px;
+}
+
+.button-send-message {
+    background-color: #ffc451;
+}
+
+.button-send-message:hover {
+    background-color: rgba(255, 197, 81, 0.8);
+}
+
+/* footer */
+
+.useful-link-a:hover {
+    color: #ffc451;
+}
+
+.button-subscribe {
+    background-color: #ffc451;
+}
+
+.button-subscribe:hover {
+    background-color: #ffc451;
+}
+
+.footer-row {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.text-footer-link {
+    color: #ffc451;
+}
+
+.text-footer-link:hover {
+    color: rgba(255, 197, 81, 0.5);
+}
