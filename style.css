@@ -25,8 +25,10 @@
 body {
     margin: 0 0;
     /* background-color: rgb(225, 225, 225); */
-    font-family: "Nunito", sans-serif;
+    font-family: "Nunito", sans-serif !important;
 }
+
+
 
 .navbar {
     background-color: rgba(62, 62, 62, 0.75); /* Đặt màu nền với độ mờ */
@@ -68,8 +70,8 @@ body {
 .button-get-started {
     width: 120px;
     height: 40px;
-    border: 1px solid #ffc451;
-    color: #ffc451;
+    border-color: #ffc451 !important;
+    /* color: #ffc451; */
 }
 
 .button-get-started:hover {
@@ -102,10 +104,10 @@ body {
         transform: translate(0, 0);
     }
 }
-
+/* 
 .border {
     border: 1px #ffc451 solid;
-}
+} */
 
 .hero-box {
     transition: all 0.5s;
@@ -134,6 +136,10 @@ body {
     list-style-type: none;
 }
 
+.fa-check-double {
+    color: #ffc451 !important;
+    font-size: 12px;
+}
 /* about */
 .slick-slide {
     margin: 0px 20px;
@@ -226,7 +232,7 @@ body {
 
 .social-box .box {
     background: #fff;
-    height: 20rem;
+    height: 30rem;
     transition: all 0.5s ease-out;
 }
 
@@ -267,16 +273,61 @@ body {
 .button-call-to-action {
     width: 180px;
     height: 40px;
-    border: 2px solid white;
-    /* color: #ffc451; */
+
 }
 
 .button-call-to-action:hover {
     background-color: #ffc451;
     color: #000 !important;
+    border-color: #ffc451 !important; 
 }
 
 /* portfolio */
+
+.filter-button 
+{
+    border: none !important;
+}
+
+.filter-button:hover
+{
+    border: 1px solid #ffc451 !important;
+    background-color: #ffc451 !important;
+
+}
+.btn-default:active .filter-button:active
+{
+    background-color: #ffc451 !important;
+
+}
+
+.image-grid-cover {
+    width: 100%;
+    background-size: cover;
+    min-height: 180px;
+    position: relative;
+    margin-bottom: 30px;
+    text-shadow: rgba(0,0,0,.8) 0 1px 0;
+    border-radius: 4px;
+}
+
+.item-detail-img {
+    margin-left: 10px;
+    bottom: 10px;
+    right: 0;
+    left: 0;
+}
+.image-grid-cover:hover {
+    background-color: rgba(0, 0, 0, 0.493);
+    background-blend-mode: darken;
+}
+
+.image-grid-cover:hover > .item-detail-img {
+    opacity: 100% !important;
+    transition: 1s ease-in-out;
+}
+
+
 
 /* between port and team */
 .space-between-porteam {
@@ -334,9 +385,10 @@ body {
 
 /* team */
 
-.img-card:hover > .opacity-0{
+.img-card:hover > .opacity-0 {
     opacity: 100% !important;
-    transition: width 2s;
+    transition: 1s ease-in-out;
+    
 }
 
 .social-item {
