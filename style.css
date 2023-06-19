@@ -6,21 +6,50 @@
     transform: translate(-50%,-50%);
 	width: 150px;
     height: 150px;	
-}
+    background-color: #ccc;
+} */
 
-.loader {
+/* .loader {
     width: calc(100% - 0px);
 	height: calc(100% - 0px);
 	border: 8px solid #12121261;
 	border-top: 8px solid #ffc451;
 	border-radius: 50%;
 	animation: rotate 5s linear infinite;
+} */
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
 }
 
-@keyframes rotate {
-100% {transform: rotate(360deg);}
-}  */
-/* hsaf */
+.loader {
+    border: 8px solid #12121261;
+    border-top: 8px solid #ffc451;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* header */
 
 body {
     margin: 0 0;
@@ -28,7 +57,14 @@ body {
     font-family: "Nunito", sans-serif !important;
 }
 
-
+.navbar-nav .nav-item .nav-link.active {
+    color: #ffc451 !important;
+}
+.navbar-nav .nav-item .nav-link:hover {
+    text-decoration: none;
+    color: #ffc451 !important;
+    /* color: blue !important; */
+}
 
 .navbar {
     background-color: rgba(62, 62, 62, 0.75); /* Đặt màu nền với độ mờ */
@@ -220,6 +256,20 @@ body {
     display: none;
 }
 
+/* slider logo */
+.logo {
+    filter: grayscale(100%); /* Tắt màu logo */
+    transition: filter 0.3s; /* Thời gian chuyển đổi */
+}
+
+.logo:hover {
+    filter: grayscale(0%); /* Hiển thị màu logo khi hover */
+}
+
+.slider.stopped .slide:not(:hover) .logo {
+    filter: grayscale(100%); /* Tắt màu các logo khi slider bị dừng */
+}
+
 /* services */
 .title-services h6::after {
     content: "";
@@ -273,61 +323,115 @@ body {
 .button-call-to-action {
     width: 180px;
     height: 40px;
-
 }
 
 .button-call-to-action:hover {
     background-color: #ffc451;
     color: #000 !important;
-    border-color: #ffc451 !important; 
+    border-color: #ffc451 !important;
 }
 
 /* portfolio */
-
-.filter-button 
-{
+.filters {
+    text-align: center;
+    margin-top: 10px;
+  }
+.filters ul {
+    padding: 0;
+  }
+.filters ul li {
+    list-style: none;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    padding: 10px 20px;
+    border-radius: 4px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    margin: 5px;
+    letter-spacing: 2px;
+  }
+.filters ul li:after {
+    content: '';
+    display: block;
+    width: calc(0% - 60px);
+    position: absolute;
+    height: 2px;
+    background: #333;
+    transition: width 350ms ease-out;
+  }
+.filters ul li:hover:after {
+    /* width: calc(100% - 60px); */
+    transition: width 350ms ease-out;
+    background-color: #ffc451 !important;
+  }
+.filters ul li.active:after {
+    /* width: calc(100% - 60px); */
+    color: #ffc451;
+  }
+.filter-button {
     border: none !important;
 }
-
-.filter-button:hover
-{
+  .filter-button:hover {
     border: 1px solid #ffc451 !important;
     background-color: #ffc451 !important;
-
 }
-.btn-default:active .filter-button:active
-{
+.btn:focus, .btn:active, .filter-button:focus, .filter-button:active {
+    outline: none !important;
+    box-shadow: none !important;
     background-color: #ffc451 !important;
+  }
 
-}
 
-.image-grid-cover {
+.imgHolder {
     width: 100%;
     background-size: cover;
-    min-height: 180px;
     position: relative;
-    margin-bottom: 30px;
-    text-shadow: rgba(0,0,0,.8) 0 1px 0;
+    color: #ffffff;
     border-radius: 4px;
+    overflow: hidden;
+    /* padding: 18px; */
 }
 
 .item-detail-img {
-    margin-left: 10px;
-    bottom: 10px;
-    right: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    /* align-items: ; */
+    bottom: 0px;
+    /* right: 20px; */
     left: 0;
-}
-.image-grid-cover:hover {
-    background-color: rgba(0, 0, 0, 0.493);
-    background-blend-mode: darken;
+    opacity: 0;
+
 }
 
-.image-grid-cover:hover > .item-detail-img {
-    opacity: 100% !important;
-    transition: 1s ease-in-out;
+.imgHolder:hover img {
+
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+  }
+
+.imgHolder:hover > .item-detail-img {
+    position: absolute;
+    width: 100%;
+    opacity: 1 !important;
+    transition: transform 0.5s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.25);
+   
+}
+.title-img-portfolio {
+    margin-bottom: 20px;
+    margin-left: 40px;
 }
 
-
+  
+.title-img-portfolio svg {
+    color: #ffffff !important;
+}
 
 /* between port and team */
 .space-between-porteam {
@@ -383,12 +487,19 @@ body {
     border: 6px solid rgba(255, 255, 255, 0.15);
 }
 
+.carousel-control-prev {
+    left: -20rem;
+}
+
+.carousel-control-next {
+    right: -20rem;
+}
+
 /* team */
 
 .img-card:hover > .opacity-0 {
     opacity: 100% !important;
     transition: 1s ease-in-out;
-    
 }
 
 .social-item {
@@ -400,12 +511,10 @@ body {
 .social-icon {
     width: 30px;
     height: 30px;
-
 }
 
 .social-icon:hover {
     background-color: #ffc451 !important;
-
 }
 
 .social-icon:hover > svg {
@@ -451,4 +560,43 @@ body {
 
 .text-footer-link:hover {
     color: rgba(255, 197, 81, 0.5);
+}
+
+/* scroll */
+.scroll-top-wrapper {
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    text-align: center;
+    z-index: 99999999;
+    background-color: #ffc451;
+    color: #000000;
+    width: 40px;
+    height: 48px;
+    line-height: 48px;
+    right: 5px;
+    bottom: 30px;
+    padding-top: 2px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.scroll-top-wrapper:hover {
+    background-color: #000000;
+    color: #ffc451;
+}
+.scroll-top-wrapper.show {
+    visibility: visible;
+    cursor: pointer;
+    opacity: 1;
+}
+.scroll-top-wrapper i.fa {
+    line-height: inherit;
 }
